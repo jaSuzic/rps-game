@@ -1,0 +1,30 @@
+<header class="header">
+    <div>{{player1.name}} <b>{{score.first}} : {{score.second}}</b> {{player2.name}}</div>
+    <button (click)="changePlayersSettings()"
+            title="Change players"><fa-icon [icon]="gearIcon"></fa-icon></button>
+</header>
+
+<div *ngIf="!player1Choice">
+    <app-role-choice playerId="1"
+                     (newChoiceEmitter)="manualDeterminePlayerChoice($event)"></app-role-choice>
+</div>
+
+<div *ngIf="player1Choice && !player2Choice">
+    <app-role-choice playerId="2"
+                     (newChoiceEmitter)="manualDeterminePlayerChoice($event)"></app-role-choice>
+</div>
+
+<div *ngIf="winner">
+    <div class="player-choices">{{ player1.name }} has choose: <b>{{ player1Choice }}</b>, and {{ player2.name }}
+        has choose: <b>{{ player2Choice }}</b>
+    </div>
+    <div *ngIf="winner==='TIE'; else winnerIsKnown"
+         class="winner">It's a tie, no one wins this round... </div>
+    <ng-template #winnerIsKnown>
+        <div class="winner">Winner is: <b>{{winner}}</b>, congratulation!!!</div>
+    </ng-template>
+    <button (click)="continueGame()"
+            class="game-button">Continue to next round</button>
+    <button (click)="startNewGame()"
+            class="game-button">Start new game</button>
+</div>

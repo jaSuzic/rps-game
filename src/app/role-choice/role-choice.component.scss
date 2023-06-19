@@ -1,0 +1,40 @@
+.icons-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.role-icon {
+
+    margin: 0 1em;
+    cursor: pointer;
+    border: 5px solid transparent;
+
+    fa-icon {
+        font-size: 8em;
+        color: purple;
+        padding: 1rem;
+    }
+}
+
+.selected-icon {
+    border: 5px solid purple;
+    border-radius: 20px;
+}
+
+.role-button {
+    border: none;
+    padding: .5em 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+    font-size: 1em;
+
+    &:hover {
+        background-color: rgb(220, 220, 220);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}

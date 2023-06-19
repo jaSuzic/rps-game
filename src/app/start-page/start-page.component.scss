@@ -1,0 +1,53 @@
+.player-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+
+    input {
+        padding: .5rem 1rem;
+        border-radius: 30px;
+        margin-right: 2rem;
+        font-size: 1em;
+        background-color: antiquewhite;
+        border: none;
+    }
+
+    label {
+        padding: .5rem;
+    }
+
+    fa-icon {
+        padding: .5rem 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(194, 231, 194);
+            border-radius: 15px;
+        }
+    }
+
+}
+
+.selected-icon {
+    background-color: lightblue;
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+
+.start-button {
+    border: none;
+    margin-top: 2em;
+    padding: .5em 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+    font-size: 1em;
+
+    &:hover {
+        background-color: rgb(220, 220, 220);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}

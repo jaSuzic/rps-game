@@ -1,0 +1,16 @@
+<h2>Welcome to rock paper scissors game. Enjoy!</h2>
+<div *ngFor="let player of players; let i=index"
+     class="player-wrapper">
+    <label [for]="'player' + i">{{i+1}}. player</label>
+    <input [(ngModel)]="player.name"
+           [id]="'player' + i">
+    <fa-icon (click)="changePlayer(i, 'computer')"
+             [icon]="computerIcon"
+             [ngClass]="{'selected-icon' : player.owner==='computer'}"></fa-icon>
+    <fa-icon (click)="changePlayer(i, 'human')"
+             [icon]="personIcon"
+             [ngClass]="{'selected-icon' : player.owner==='human'}"></fa-icon>
+</div>
+<button (click)="onStart()"
+        [disabled]="checkNames()"
+        class="start-button">Start</button>

@@ -1,0 +1,19 @@
+<div class="icons-wrapper">
+    <div *ngFor="let choice of choices">
+        <div [ngSwitch]="choice"
+             (click)="chosenRole=choice"
+             class="role-icon"
+             [ngClass]="{'selected-icon' : chosenRole===choice}">
+            <fa-icon *ngSwitchCase="'rock'"
+                     [icon]='rockIcon'></fa-icon>
+            <fa-icon *ngSwitchCase="'paper'"
+                     [icon]='paperIcon'></fa-icon>
+            <fa-icon *ngSwitchCase="'scissors'"
+                     [icon]='scissorsIcon'></fa-icon>
+        </div>
+    </div>
+</div>
+
+<button (click)="chooseRole()"
+        [disabled]="!chosenRole"
+        class="role-button">Chose your role!</button>
